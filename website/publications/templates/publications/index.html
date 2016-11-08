@@ -1,0 +1,26 @@
+{% if all_publications%}
+    <h3>There are all publications:</h3>
+    <ul>
+        {% for publication in all_publications%}
+            <li><a href="{% url 'publications:detail' publication.id %}">{{ publication.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3>You don't have any albums</h3>
+{% endif%}
+<form action="" method="post">
+{% csrf_token %}
+    {{form}}
+<input type="submit" value="Search"  />
+</form>
+
+<!--<!DOCTYPE html> -->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
